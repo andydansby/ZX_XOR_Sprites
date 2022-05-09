@@ -7,6 +7,8 @@ SECTION code_user
 ;;;;;;;;;;;;;;;;;;;;;;
 extern _RTUNES_yx2pix
 extern _yx2pix
+extern _nextlinedown
+extern _getsprite
 
 
 ;;;;;;;;;;;;;;;;;;;;;;
@@ -19,7 +21,7 @@ _x_coordinate:
 PUBLIC _y_coordinate
 _y_coordinate:
 	defb $00
-	
+
 PUBLIC _Collision_detected_TF
 _Collision_detected_TF:
 	defb $00

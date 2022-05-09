@@ -2,7 +2,8 @@ uncontended.c
 im2.asm
 keyboard.asm
 random.asm
-RTAPE.asm
+RTAPE_Sprite_AUX.asm
+RTAPE_Sprite.asm
 RTAPE_Sprite_Data.asm
 uncontended.asm
 ; .lst files commented with semi-colon or hash
