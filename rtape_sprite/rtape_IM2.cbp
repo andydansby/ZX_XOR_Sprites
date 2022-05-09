@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="R-Tape" />
+		<Option pch_mode="2" />
+		<Option compiler="sdcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/128k programming 1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="sdcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../CONTENDED/contended.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../CONTENDED/externs.h" />
+		<Unit filename="../CONTENDED/mmap.inc" />
+		<Unit filename="../CONTENDED/ramlow.asm" />
+		<Unit filename="../CONTENDED/ramlow.bat" />
+		<Unit filename="../CONTENDED/ramlow.lst" />
+		<Unit filename="../CONTENDED/routines.h" />
+		<Unit filename="../CONTENDED/variables.h" />
+		<Unit filename="../CONTENDED/zpragma.inc" />
+		<Unit filename="../OBJECTS/error.bat" />
+		<Unit filename="../OBJECTS/magic.bat" />
+		<Unit filename="../RAM0/externs.h" />
+		<Unit filename="../RAM0/mmap.inc" />
+		<Unit filename="../RAM0/ram0.bat" />
+		<Unit filename="../RAM0/ram0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../RAM0/ram0.h" />
+		<Unit filename="../RAM0/ram0.lst" />
+		<Unit filename="../RAM0/ram0Z.asm" />
+		<Unit filename="../RAM0/variables.h" />
+		<Unit filename="../RAM0/zpragma.inc" />
+		<Unit filename="../UNCONTENDED/IM2.asm" />
+		<Unit filename="../UNCONTENDED/RTAPE.asm" />
+		<Unit filename="../UNCONTENDED/RTAPE_Sprite_Data.asm" />
+		<Unit filename="../UNCONTENDED/cleanup.bat" />
+		<Unit filename="../UNCONTENDED/externs.h" />
+		<Unit filename="../UNCONTENDED/functions.h" />
+		<Unit filename="../UNCONTENDED/keyboard.asm" />
+		<Unit filename="../UNCONTENDED/mmap.inc" />
+		<Unit filename="../UNCONTENDED/ramMain.lst" />
+		<Unit filename="../UNCONTENDED/rammain.bat" />
+		<Unit filename="../UNCONTENDED/random.asm" />
+		<Unit filename="../UNCONTENDED/uncontended.asm" />
+		<Unit filename="../UNCONTENDED/uncontended.bat" />
+		<Unit filename="../UNCONTENDED/uncontended.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../UNCONTENDED/uncontended.h" />
+		<Unit filename="../UNCONTENDED/variables.h" />
+		<Unit filename="../UNCONTENDED/zpragma.inc" />
+		<Unit filename="../compile.bat" />
+		<Unit filename="../errors.txt" />
+		<Unit filename="../magic/voodoo.bat" />
+		<Unit filename="../notes.txt" />
+		<Unit filename="../utils/loader.bas" />
+		<Unit filename="../utils/temp notes.txt" />
+		<Unit filename="../working_on.txt" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
