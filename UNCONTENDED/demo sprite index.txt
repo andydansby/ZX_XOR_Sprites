@@ -1,0 +1,49 @@
+in demo
+
+$8CDD in demo is breakpoint
+ld (ix + $02) , L ; set X
+ld (ix + $03) , C ; set Y
+
+ix is index
+x = index + 2
+y = index + 3
+
+map of indexes
+
+
+$824B = 33355	sprite_0
+$8257 = 33367	sprite_1
+$8263 = 33379	sprite_2
+$826F = 33391	sprite_3
+$827B = 33403	sprite_4
+$8287 = 33415	sprite_5
+$8293 = 33427	sprite_6	
+$829F = 33439	sprite_7
+$82AB = 33451	sprite_8
+$82B7 = 33463	sprite_9
+$82C3 = 33475	sprite_10
+
+
+sprite_0	X = $6c		Y = $08
+sprite_1	X = $11		Y = $18
+sprite_2	X = $13		Y = $28
+sprite_3	X = $3d		Y = $38
+sprite_4	X = $73		Y = $48
+sprite_5	X = $57		Y = $58
+sprite_6	X = $26		Y = $68
+sprite_7	X = $01		Y = $78
+sprite_8	X = $97		Y = $88
+sprite_9	X = $1d		Y = $98
+sprite_10	X = $62		Y = $a8
+
+
+min 1
+max 175
+
+max
+a8	168
+a5	165
+af	175
+
+
+

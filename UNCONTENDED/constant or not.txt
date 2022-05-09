@@ -1,0 +1,96 @@
+examine
+Sprite_Max: EQU 0x00000010
+
+found in 
+
+Clear_Sprite_Slots:	; $807F in demo
+	LD B, Sprite_Max
+Get_Sprite_Slot:	; $8091 in demo
+	LD B, Sprite_Max
+Scroll_Adjust_Sprites:	; $80A4 in demo
+	LD B, Sprite_Max
+Handle_Sprites_SP:	; $80D1 in demo
+	LD B, Sprite_Max
+
+Sprite_Max is a const
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Sprite_Image: EQU 0x00000000
+
+found in
+
+;this is part of a macro
+INITIALISE_SPRITE:	MACRO p_X, p_Y, p_IMAGE, p_LOGIC
+			LD (IY+Sprite_X), p_X
+			LD (IY+Sprite_Y), p_Y
+			LD (IY+Sprite_Logic+0), low  p_LOGIC
+			LD (IY+Sprite_Logic+1), high p_LOGIC 
+			LD (IY+Sprite_Image+0), low  p_IMAGE
+			LD (IY+Sprite_Image+1), high p_IMAGE
+			ENDM
+	
+Initialise_Sprites_1:	; $8CE5 in demo
+	LD (IX+Sprite_Image),L		= 0
+	LD (IX+Sprite_Image+1),H	= 1
+	
+Render_Sprites_0:		; $8124 in demo
+	LD E,(IX+Sprite_Image)		= 0
+	LD D,(IX+Sprite_Image+1)	= 1
+	
+Sprite_Image seems like a const
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Sprite_X: EQU 0x00000002
+Sprite_Y: EQU 0x00000003
+
+Initialise_Sprites_1:	; $8CE5 in demo
+LD (IX+Sprite_X), L			; And store in Sprite_X
+LD (IX+Sprite_Y), C			; Store the Y coordinate
+	
+Demo_Sprite_Logic:		; $8D16 in demo
+LD A,(IX+Sprite_X)
+
+ix index
+
+$824B = 33355
+$8257 = 33367
+$8263 = 33379
+$826F = 33391
+$827B = 33403
+$8287 = 33415
+$8293 = 33427
+$829F = 33439
+$82AB = 33451
+$82B7 = 33463
+$82C3 = 33475
+
+
+
+
+
+
+
+
+
+
+
+
+PUBLIC _Sprite_X
+    _Sprite_X:          EQU 0x02
+PUBLIC _Sprite_Y
+    _Sprite_Y:          EQU 0x03
+PUBLIC _Sprite_Logic
+    _Sprite_Logic:		EQU 0x04
+PUBLIC _Sprite_Flags
+    _Sprite_Flags:		EQU 0x06
+PUBLIC _Sprite_Data_1
+    _Sprite_Data_1:		EQU 0x07
+PUBLIC _Sprite_Data_2
+    _Sprite_Data_2:		EQU 0x08
+PUBLIC _Sprite_Data_3
+    _Sprite_Data_3:		EQU 0x09
+PUBLIC _Sprite_Data_4
+    _Sprite_Data_4:		EQU 0x0A
+PUBLIC _Sprite_Data_5
+    _Sprite_Data_5:		EQU 0x0B
