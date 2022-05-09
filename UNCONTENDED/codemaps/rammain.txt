@@ -1,0 +1,24 @@
+Object  file objects.o at $0000: Z80RMF12
+  Name: uncontended_c
+  Section data_compiler: 11 bytes
+  Section code_compiler: 149 bytes
+  Section rodata_compiler: 153 bytes
+  Section bss_compiler: 0 bytes
+  Symbols:
+    G A $0000 _eve (section data_compiler) (file uncontended.c:17)
+    G A $0002 _bob (section data_compiler) (file uncontended.c:21)
+    G A $0004 _anna (section data_compiler) (file uncontended.c:25)
+    G A $0006 _tom (section data_compiler) (file uncontended.c:29)
+    G A $0007 _dick (section data_compiler) (file uncontended.c:33)
+    G A $0008 _harry (section data_compiler) (file uncontended.c:37)
+    G A $0009 _susan (section data_compiler) (file uncontended.c:41)
+    G A $0000 _uncontended (section code_compiler) (file uncontended.c:47)
+    G A $0031 _callContended1 (section code_compiler) (file uncontended.c:78)
+    G A $0064 _callRAM0 (section code_compiler) (file uncontended.c:111)
+    G A $008E _main (section code_compiler) (file uncontended.c:139)
+  Externs:
+    U         printf
+    U         _doSomething
+    U         _add_two_numbers
+    U         _multiply2numbers
+    U         _subtract2numbers
