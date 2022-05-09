@@ -1,0 +1,193 @@
+compiled_BANK_00.bin
+compiled_CODE.bin
+compiled_UNASSIGNED.bin
+compiled_UNCONTENDED.bin
+
+__code_crt_main_head
+
+
+
+There are several sections the compiler
+puts stuff into:
+
+codeseg = code
+constseg = constant data
+bssseg = uninitialized variables
+dataseg = initialized variables
+
+You have to change the destination section
+for each of those segments on the zcc line.
+
+zsdcc can only do codeseg and constseg so
+the recommended thing to do is declare anything
+destined for bss or data sections in asm where
+they can be placed properly.
+
+example of c declarations:
+
+extern int a;   // bss
+extern int b = 10;   // data
+
+Then in a separate asm file define the variables
+placed in a specific section:
+
+SECTION bss_name
+PUBLIC _a
+_a : defs 2
+
+SECTION data_name
+PUBLIC _b
+_b : defw 10
+
+That should be "extern int b;".
+The C declarations are not creating space -
+they only tell the compiler the variables
+exist and are defined elsewhere.
+
+------------
+collision
+
+    ;manic miner
+;LD A,(DE) ; Pick up a sprite byte
+;AND (HL)  ; AND on the current background byte
+;RET NZ    ; Return if the sprite hit something already
+
+===================
+COLLISION
+BLANK portion of Sprite touching nothing
+00000000	sprite
+OR
+00000000	tile
+========
+00000000	result 1
+
+00000000	sprite
+XOR
+00000000	tile
+========
+00000000	result 2
+
+subtract result 1 and result 2
+	00000000
+-	00000000
+=============
+	00000000
+	ZERO
+
+--------------------------------
+FILLED portion of Sprite touching nothing
+00011000	sprite
+OR
+00000000	tile
+========
+00011000	result 1
+
+00011000	sprite
+XOR
+00000000	tile
+========
+00011000	result 2
+
+subtract result 1 and result 2
+	00011000	result 1
+-	00011000	result 2
+=============
+	00000000
+	ZERO
+
+--------------------------------
+FILLED portion of Sprite touching part Tile
+00011000	sprite
+OR
+00011000	tile
+========
+00011000	result 1
+
+00011000	sprite
+XOR
+00011000	tile
+========
+00000000	result 2
+
+subtract result 1 and result 2
+	00011000	result 1
+-	00000000	result 2
+=============
+	00011000
+	NOT ZERO
+
+--------------------------------
+FILLED portion of Sprite touching full Tile
+00011000	sprite
+OR
+11111111	tile
+========
+11111111	result 1
+
+00011000	sprite
+XOR
+11111111	tile
+========
+11100111	result 2
+
+subtract result 1 and result 2
+	11111111	result 1
+-	11100111	result 2
+=============
+	00011000
+	NOT ZERO
+
+
+
+;DE = SCREEN BYTE
+;HL = SPRITE BYTE
+
+ld a, (de); load byte from screen
+;call _collision
+XOR (hl)        ; merge with Sprite
+ld (de),a		;and put it on the screen
+
+
+
+
+_rtunes_pixel:
+
+    ld de, (_gfx_xy)  ;20 T
+
+    ld a, d  ;4 T
+    and a  ;4 T
+    rra  ;4 T
+    scf  ;4 T
+    rra  ;4 T
+    and a  ;4 T
+    rra  ;4 T
+    xor d  ;4 T
+    and 11111000b  ;7 T
+
+    xor d  ;4 T
+    ld h, a  ;4 T
+    ld a, e  ;4 T
+    rlca  ;4 T
+    rlca  ;4 T
+    rlca  ;4 T
+    xor d  ;4 T
+    and 11000111b  ;7 T
+    xor d  ;4 T
+    rlca  ;4 T
+    rlca  ;4 T
+    ld l, a  ;4 T
+
+    ld a, e  ;4 T
+    and $07
+
+    ;LD D, A				;4 T
+
+    ld de, X_PositionBits  ;10T
+    add a, e  ;4 T
+    ld e, a  ;4 T
+    ld a, (de)  ;7 T
+
+    ;output to screen
+    or (hl)  ;7 T
+    ld (hl), a  ;7 T
+ret						;10 T

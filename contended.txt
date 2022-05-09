@@ -1,0 +1,9 @@
+Object  file contended.o at $0000: Z80RMF12
+  Name: contended
+  Section CONTENDED: 1 bytes
+  Section bss_compiler: 0 bytes
+  Section IGNORE: 0 bytes
+  Section code_crt_init: 0 bytes
+  Section code_compiler: 0 bytes
+  Symbols:
+    G A $0000 _Variable_in_contended (section CONTENDED) (file ramlow.asm:28)

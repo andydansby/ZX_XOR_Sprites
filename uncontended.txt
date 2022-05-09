@@ -1,0 +1,79 @@
+Object  file uncontended.o at $0000: Z80RMF12
+  Name: uncontended
+  Section bss_compiler: 64 bytes
+  Section IGNORE: 0 bytes
+  Section code_crt_init: 0 bytes
+  Section code_compiler: 1145 bytes
+  Section rodata_compiler: 99 bytes
+  Section data_compiler: 9 bytes
+  Section IM2_VECTOR_PLACEMENT: 325 bytes
+  Section code_user: 801 bytes
+  Section rodata_user: 1 bytes
+  Section smc_user: 0 bytes
+  Section data_user: 0 bytes
+  Section bss_user: 1 bytes
+  Symbols:
+    G A $02F4 _main (section code_compiler) (file uncontended.c:1227)
+    G A $02B8 _use_random_number_generator (section code_compiler) (file uncontended.c:1188)
+    G A $0274 _call_Fill_Attr (section code_compiler) (file uncontended.c:1153)
+    G A $014D _initSpriteStruct (section code_compiler) (file uncontended.c:921)
+    G A $0044 _clearSpriteStruct (section code_compiler) (file uncontended.c:705)
+    G A $001C _checkBoundries (section code_compiler) (file uncontended.c:676)
+    G A $0000 _multiply2numbers (section code_compiler) (file uncontended.c:655)
+    G A $0008 _direction (section data_compiler) (file uncontended.c:1466)
+    G A $0007 _ava (section data_compiler) (file uncontended.c:1464)
+    G A $0005 _bob (section data_compiler) (file uncontended.c:1462)
+    G A $0003 _eve (section data_compiler) (file uncontended.c:1460)
+    G A $0002 _harry (section data_compiler) (file uncontended.c:1458)
+    G A $0001 _dick (section data_compiler) (file uncontended.c:1456)
+    G A $0000 _tom (section data_compiler) (file uncontended.c:1454)
+    G A $003F _temp (section bss_compiler) (file uncontended.c:609)
+    G A $003D _temp4 (section bss_compiler) (file uncontended.c:607)
+    G A $003B _temp3 (section bss_compiler) (file uncontended.c:605)
+    G A $0039 _temp2 (section bss_compiler) (file uncontended.c:603)
+    G A $0037 _temp1 (section bss_compiler) (file uncontended.c:601)
+    G A $0000 _SpriteStruct (section bss_compiler) (file uncontended.c:599)
+    G A $0000 _IM2_PUSH_POP (section IM2_VECTOR_PLACEMENT) (file im2.asm:29)
+    G A $0022 _SETUP_IM2 (section IM2_VECTOR_PLACEMENT) (file im2.asm:68)
+    G A $0043 _IM2_VECTOR (section IM2_VECTOR_PLACEMENT) (file im2.asm:110)
+    G A $0000 _keypress (section code_user) (file keyboard.asm:14)
+    G A $0002 _Read_Controls (section code_user) (file keyboard.asm:23)
+    G A $005A _random_number_16 (section code_user) (file random.asm:7)
+    G A $005C _xorshift_prng (section code_user) (file random.asm:12)
+    G A $007C _x_coordinate (section code_user) (file RTAPE.asm:22)
+    G A $007D _y_coordinate (section code_user) (file RTAPE.asm:26)
+    G A $007F _Collision_detected_TF (section code_user) (file RTAPE.asm:32)
+    G A $0080 _wait_for_scanline (section code_user) (file RTAPE.asm:36)
+    G A $0082 _RTUNES_yx2pix (section code_user) (file RTAPE.asm:42)
+    G A $009A _nextlinedown (section code_user) (file RTAPE.asm:72)
+    G A $00A9 _yx2pix (section code_user) (file RTAPE.asm:92)
+    G A $00C6 _getsprite (section code_user) (file RTAPE.asm:124)
+    G A $00D6 _drawsprite (section code_user) (file RTAPE.asm:148)
+    G A $010F _collision2 (section code_user) (file RTAPE.asm:208)
+    G A $012D _sprite_table_addresses (section code_user) (file RTAPE_Sprite_Data.asm:6)
+    G A $013D _spritegraphic0 (section code_user) (file RTAPE_Sprite_Data.asm:18)
+    G A $016D _spritegraphic1 (section code_user) (file RTAPE_Sprite_Data.asm:38)
+    G A $019D _spritegraphic2 (section code_user) (file RTAPE_Sprite_Data.asm:57)
+    G A $01CD _spritegraphic3 (section code_user) (file RTAPE_Sprite_Data.asm:76)
+    G A $01FD _spritegraphic4 (section code_user) (file RTAPE_Sprite_Data.asm:95)
+    G A $022D _spritegraphic5 (section code_user) (file RTAPE_Sprite_Data.asm:114)
+    G A $025D _spritegraphic6 (section code_user) (file RTAPE_Sprite_Data.asm:133)
+    G A $028D _spritegraphic7 (section code_user) (file RTAPE_Sprite_Data.asm:152)
+    G A $02BD _border_Change_IM2 (section code_user) (file uncontended.asm:21)
+    G A $02CA _border_Change_uncontended (section code_user) (file uncontended.asm:32)
+    G A $02CE _character_address (section code_user) (file uncontended.asm:42)
+    G A $02D0 _attribute_color (section code_user) (file uncontended.asm:45)
+    G A $02D1 _attribute_address (section code_user) (file uncontended.asm:55)
+    G A $02D3 _attribute_width (section code_user) (file uncontended.asm:60)
+    G A $02D4 _attribute_height (section code_user) (file uncontended.asm:62)
+    G A $02D5 _pixel_address (section code_user) (file uncontended.asm:65)
+    G A $02D7 _pixel_position (section code_user) (file uncontended.asm:67)
+    G A $02D8 _character_X (section code_user) (file uncontended.asm:70)
+    G A $02D9 _character_Y (section code_user) (file uncontended.asm:72)
+    G A $02DA _attribute_Box (section code_user) (file uncontended.asm:76)
+    G A $0304 _Get_Attribute_Address (section code_user) (file uncontended.asm:134)
+    G A $0000 _xyzzy2 (section rodata_user) (file uncontended.asm:172)
+    G A $0000 _ada (section bss_user) (file uncontended.asm:189)
+  Externs:
+    U         __moduint_callee
+    U         _printf
